@@ -1,4 +1,29 @@
 body {
+  position: relative;
   font-size: 16px;
   @extend %sans-serif;
+  color: $text-dark;
+  background-color: #ffe8d3;
+  padding-bottom: 4em;
+  z-index: 0;
+
+  &::after {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    transform: translate(-50%, -50%) scale(0.98, 0.95);
+    border: 5px solid $text-dark;
+    z-index: -1;
+  }
+
+  &.admin-bar {
+    top: 24px;
+    &::after {
+      top: 52%;
+      height: 97%;
+    }
+  }
 }

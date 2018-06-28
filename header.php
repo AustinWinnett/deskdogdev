@@ -23,6 +23,10 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 
-	<?php get_template_part( 'layouts/navbar' ); ?>
+	<?php
+	if ( !is_front_page() ) {
+		get_template_part( 'layouts/navbar' );
+	}
+	?>
 
 	<div id="content" class="site-content">

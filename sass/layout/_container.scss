@@ -1,0 +1,5 @@
+.container {
+  @include screen-lg {
+    max-width: 700px;
+  }
+}

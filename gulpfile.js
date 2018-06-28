@@ -13,7 +13,7 @@ var browserSync = require('browser-sync');
 
 gulp.task('browser-sync', function() {
   browserSync({
-    proxy: "livingroomworship.local",
+    proxy: "deskdogdev.local",
     notify: false
   });
 });

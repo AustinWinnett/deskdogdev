@@ -1,12 +1,12 @@
 {
-  "name": "livingroomworship",
+  "name": "deskdogdevelopment",
   "version": "1.0.0",
   "author": "Desk Dog Development <austinjwinnett@gmail.com>",
   "homepage": "https://deskdogdev.com",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/AustinWinnett/livingroomworship"
+    "url": "git://github.com/AustinWinnett/deskdogdev"
   },
   "licenses": [
     {

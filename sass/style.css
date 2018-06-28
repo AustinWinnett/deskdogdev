@@ -3,7 +3,7 @@ Theme Name: Desk Dog Development
 Theme URI: http://underscores.me/
 Author: Desk Dog Development
 Author URI: https://deskdogdev.com
-Description: A custom theme for Living Room Worship.
+Description: A custom theme for Desk Dog Development.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -395,7 +395,7 @@ template {
 body,
 .sans-serif {
   font-family: 'Roboto', 'Helvetica', sans-serif;
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal; }
 
 h1,
@@ -444,17 +444,14 @@ big {
  */
 h1,
 .h1 {
-  text-transform: uppercase;
   font-size: 3.125em; }
 
 h2,
 .h2 {
-  text-transform: uppercase;
   font-size: 2.85em; }
 
 h3,
 .h3 {
-  text-transform: uppercase;
   font-size: 2.5em; }
 
 h4,
@@ -468,7 +465,6 @@ h5,
 
 h6,
 .h6 {
-  text-transform: uppercase;
   font-size: 1.125em; }
 
 p {
@@ -482,6 +478,9 @@ address {
 
 .light {
   font-weight: 300; }
+
+.uppercase {
+  text-transform: uppercase; }
 
 /*--------------------------------------------------------------
 # Elements
@@ -715,54 +714,34 @@ a {
   width: 50%; }
 
 header.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 0.5em 0;
-  z-index: 100; }
+  margin-top: 3em; }
+  header.site-header .container {
+    max-width: 700px; }
   .logged-in header.site-header {
     top: 30px; }
 
 .navbar-logo {
   font-size: 1.125em;
   text-transform: uppercase; }
-  .navbar-logo a {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap; }
   .navbar-logo span {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
     margin-left: 1em;
-    color: #333; }
+    color: #333;
+    margin: 0 0 0 0.5em;
+    vertical-align: middle; }
   .navbar-logo img {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
-    max-width: 60px; }
+    max-width: 100px;
+    vertical-align: middle; }
 
-.navbar-nav.column {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end; }
+.navbar-nav.menu--default {
+  margin-top: -0.75em; }
 
-.menu ul {
+.menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -773,34 +752,31 @@ header.site-header {
       -ms-flex-align: center;
           align-items: center;
   margin: 0; }
+  .menu li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    padding: 0 1em;
+    margin-bottom: 0;
+    list-style: none;
+    font-size: 1.125em; }
+    .menu li a {
+      position: relative;
+      color: #333;
+      padding-bottom: 0.5em; }
+      .menu li a:hover {
+        text-decoration: underline; }
 
-.menu li {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-  padding-left: 1em;
-  margin-bottom: 0;
-  list-style: none;
-  text-transform: uppercase;
-  font-size: 1.125em; }
-  .menu li a {
-    position: relative;
-    color: #333;
-    padding-bottom: 0.5em; }
-    .menu li a::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 3px;
-      width: 0;
-      background-color: #E84848;
-      -webkit-transition: 0.15s ease-in-out;
-      transition: 0.15s ease-in-out; }
-    .menu li a:hover::before {
-      width: 100%; }
-  .menu li.current_page_item a::before {
-    width: 100%; }
+.menu--home .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -891,19 +867,42 @@ header.site-header {
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
+@media (max-width: 1280px) {
+  .container {
+    max-width: 700px; } }
+
 .site-footer {
+  position: absolute;
+  bottom: 2.1em;
+  width: 100%;
+  text-align: center;
   font-size: 0.875em; }
-  .site-footer.footer--home {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    z-index: 10;
-    color: #FFFFFF;
-    font-weight: 300; }
+  .site-footer p {
+    margin: 0; }
 
 body {
-  font-size: 16px; }
+  position: relative;
+  font-size: 16px;
+  color: #333;
+  background-color: #ffe8d3;
+  padding-bottom: 4em;
+  z-index: 0; }
+  body::after {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    -webkit-transform: translate(-50%, -50%) scale(0.98, 0.95);
+            transform: translate(-50%, -50%) scale(0.98, 0.95);
+    border: 5px solid #333;
+    z-index: -1; }
+  body.admin-bar {
+    top: 24px; }
+    body.admin-bar::after {
+      top: 52%;
+      height: 97%; }
 
 /*--------------------------------------------------------------
 # Media
@@ -976,22 +975,33 @@ object {
 /*--------------------------------------------------------------
 # Pages
 --------------------------------------------------------------*/
-.ddd-splash {
-  position: relative;
+.ddd-home-content__wrapper {
   min-height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  z-index: 0; }
-  .ddd-splash::after {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center; }
+  .ddd-home-content__wrapper img {
+    max-width: 200px; }
+  .ddd-home-content__wrapper .ddd-home-content__title {
+    margin: 0.25em 0 0.5em; }
+
+.page-title {
+  position: relative;
+  margin-bottom: 0.5em; }
+  .page-title::after {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1; }
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: #333;
+    margin-top: 0.3em; }
 
 /*--------------------------------------------------------------
 # Components

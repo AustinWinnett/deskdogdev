@@ -13,7 +13,7 @@ A starter theme called Desk Dog Development.
 
 == Description ==
 
-A custom theme for Living Room Worship.
+A custom theme for Desk Dog Development.
 
 == Installation ==
 
